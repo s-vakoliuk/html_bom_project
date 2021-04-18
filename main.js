@@ -21,10 +21,7 @@ let usersObj = {
 
 const btEdit=document.getElementById("btedit")
 btEdit.onclick =()=> {
-    let key= document.getElementById("recordnumber").value;
-    let usersObjEdit =JSON.parse(JSON.stringify(usersObj));
-    localStorage.getItem(key);
-let usersObj = {
+       let usersObj = {
         name: document.getElementById("firstname").value,
         lastname: document.getElementById("lastname").value,
         lastname2: document.getElementById("lastname2").value,
@@ -32,7 +29,11 @@ let usersObj = {
         email:document.getElementById("email").value,
         date:document.getElementById("date").value,
     }
-     console.log(usersObjEdit);
+    let usersObjEdit ={};
+    let key= document.getElementById("recordnumber").value;
+    usersObjEdit =JSON.parse(JSON.stringify(usersObj));
+    localStorage.getItem(key);
+    console.log(usersObjEdit);
 }
 
 const btErase=document.getElementById("bterase")
