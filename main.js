@@ -8,10 +8,7 @@
 
 const btSave=document.getElementById("btsave")
 function saveResponses() {
-//btSave.onclick =()=> {
-//for(let i=0; i<localStorage.length; i++) {
-//    let key = localStorage.key(i);
-//    alert(`${key}: ${localStorage.getItem(key)}`);
+
     let usersObj = {
         name: document.getElementById("firstname").value,
         lastname: document.getElementById("lastname").value,
