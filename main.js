@@ -8,7 +8,7 @@
 const btSave=document.getElementById("btsave")
 btSave.onclick =()=> {
 let usersObj = {
-        name: document.getElementById("firstname").value,
+        firstname: document.getElementById("firstname").value,
         lastname: document.getElementById("lastname").value,
         lastname2: document.getElementById("lastname2").value,
         phonenumber: document.getElementById("phonenumber").value,
@@ -19,23 +19,21 @@ let usersObj = {
     localStorage.setItem(key,JSON.stringify(usersObj));
 }
 
+//Кнопка редагування
 const btEdit=document.getElementById("btedit")
 btEdit.onclick =()=> {
-       let usersObj = {
-        name: document.getElementById("firstname").value,
-        lastname: document.getElementById("lastname").value,
-        lastname2: document.getElementById("lastname2").value,
-        phonenumber: document.getElementById("phonenumber").value,
-        email:document.getElementById("email").value,
-        date:document.getElementById("date").value,
-    }
-    let usersObjEdit ={};
-    let key= document.getElementById("recordnumber").value;
-    usersObjEdit =JSON.parse(JSON.stringify(usersObj));
-    localStorage.getItem(key);
+    let key=document.getElementById("recordnumber").value;
+    let usersObjEdit = JSON.parse (localStorage.getItem (key));
+    document.getElementById("firstname").innerHTML = usersObjEdit["firstname"];
+    document.getElementById("lastname").innerHTML = usersObjEdit["lastname"];
+    document.getElementById("lastname2").innerHTML = usersObjEdit["lastname2"];
+    document.getElementById("phonenumber").innerHTML = usersObjEdit["phonenumber"];
+    document.getElementById("email").innerHTML = usersObjEdit["email"];
+    document.getElementById("date").innerHTML = usersObjEdit["date"];
     console.log(usersObjEdit);
 }
 
+//Кнопка видалення
 const btErase=document.getElementById("bterase")
 btErase.onclick =()=>{
     let key=document.getElementById("recordnumber").value;
