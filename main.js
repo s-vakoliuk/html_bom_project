@@ -5,6 +5,7 @@
 --Каждому контакту добавить кнопку редактироваиня. При нажати на нее появляется форма, в которой есть все необходимые инпуты для редактирования, которые уже заполнены данными объекта
 */
 
+//Кнопка збереження
 const btSave=document.getElementById("btsave")
 btSave.onclick =()=> {
 let usersObj = {
@@ -24,12 +25,12 @@ const btEdit=document.getElementById("btedit")
 btEdit.onclick =()=> {
     let key=document.getElementById("recordnumber").value;
     let usersObjEdit = JSON.parse (localStorage.getItem (key));
-    document.getElementById("firstname").innerHTML = usersObjEdit["firstname"];
-    document.getElementById("lastname").innerHTML = usersObjEdit["lastname"];
-    document.getElementById("lastname2").innerHTML = usersObjEdit["lastname2"];
-    document.getElementById("phonenumber").innerHTML = usersObjEdit["phonenumber"];
-    document.getElementById("email").innerHTML = usersObjEdit["email"];
-    document.getElementById("date").innerHTML = usersObjEdit["date"];
+    document.getElementById("firstname").value = usersObjEdit["firstname"];
+    document.getElementById("lastname").value = usersObjEdit["lastname"];
+    document.getElementById("lastname2").value = usersObjEdit["lastname2"];
+    document.getElementById("phonenumber").value = usersObjEdit["phonenumber"];
+    document.getElementById("email").value = usersObjEdit["email"];
+    document.getElementById("date").vlue = usersObjEdit["date"];
     console.log(usersObjEdit);
 }
 
